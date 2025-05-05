@@ -1,0 +1,28 @@
+<!-- http://api.weatherapi.com/v1/current.json?key=c2c5e3bc596049a0b5c154259250505&q=London&aqi=yes -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather Finder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="home">
+  <div class="container">
+    <h1>🌤️ Weather Checker</h1>
+    <form id="locationForm">
+      <input type="text" id="locationInput" placeholder="Enter location" required />
+      <button type="submit">Check Weather</button>
+    </form>
+  </div>
+  <script>
+    document.getElementById('locationForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const location = document.getElementById('locationInput').value;
+      localStorage.setItem('userLocation', location);
+      window.location.href = 'weather.html';
+    });
+  </script>
+</body>
+</html>
